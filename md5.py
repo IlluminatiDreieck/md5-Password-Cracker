@@ -1,5 +1,6 @@
 import math
 
+#md5 algorythm
 rotate_amounts = [7, 12, 17, 22, 7, 12, 17, 22, 7, 12, 17, 22, 7, 12, 17, 22,
                   5,  9, 14, 20, 5,  9, 14, 20, 5,  9, 14, 20, 5,  9, 14, 20,
                   4, 11, 16, 23, 4, 11, 16, 23, 4, 11, 16, 23, 4, 11, 16, 23,
@@ -56,6 +57,7 @@ def md5_to_hex(digest):
 def hash(message):
     return md5_to_hex(md5(bytes(message, 'utf-8')))
 
+#brute forcing
 if __name__=='__main__':
     target = input("Target:\n")
     laststart = 0
@@ -72,7 +74,7 @@ if __name__=='__main__':
             print(hashedmessage, " <-- ", tries, ": ", message)
         if hashedmessage == target:
             finished = "true"
-            print("\n\nPasswort gefunden!\n\nTarget: ", target, "\nPasswort: ", message, "\nGenerierte Passwörter: ", tries)
+            print("\n\nPassword found!\n\nTarget: ", target, "\nPassword: ", message, "\nGenerated passwords: ", tries)
         tried.append(message)
         lastend += 1
     while finished == "false":
@@ -86,7 +88,7 @@ if __name__=='__main__':
                     print(hashedmessage, " <-- ", tries, ": ", message)
                 if hashedmessage == target:
                     finished = "true"
-                    print("\n\nPasswort gefunden!\n\nTarget:                  ", target, "\nPasswort:                ", message, "\nGenerierte Passwörter:   ", tries)
+                    print("\n\nPassword found!\n\nTarget:                  ", target, "\nPassword:                ", message, "\nGenerated passwords:   ", tries)
                 tried.append(message)
                 lastend += 1
         laststart = beforeend
